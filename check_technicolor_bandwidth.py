@@ -127,12 +127,11 @@ def main():
     values = originalValues[:]
     for i, value in enumerate(values):
         if unit == 'gbit':
-            value = value*1024
+            values[i] = value*1024**3
         if unit == 'mbit':
-            value = value*1024
+            values[i] = value*1024**2
         if unit == 'kbit':
-            value = value*1024
-        values[i] = value
+            values[i] = value*1024
 
     # Check return value
     returnStatus = 0
